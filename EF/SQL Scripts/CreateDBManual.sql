@@ -16,6 +16,7 @@ CREATE TABLE ProductRatings (Id INT IDENTITY(1, 1) NOT NULL, Rating INT, Comment
 	CONSTRAINT PK_ProductRatings PRIMARY KEY(Id), 
 	CONSTRAINT FK_Product_ProductRatings FOREIGN KEY (Product_Id)
 		REFERENCES [Products] (Id) ON DELETE CASCADE)
+GO
 
 --ROLLBACK
 --COMMIT
