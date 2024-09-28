@@ -1,0 +1,2 @@
+
+CREATE TABLE Products (Id INT, [Name] VARCHAR(55), Price DECIMAL)
