@@ -1,0 +1,5 @@
+--ROLLBACK ADD-RATINGS
+
+ALTER TABLE ProductRatings DROP CONSTRAINT FK_Product_ProductRatings
+DROP TABLE ProductRatings
+GO
