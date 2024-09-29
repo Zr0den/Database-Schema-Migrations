@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
@@ -12,6 +13,7 @@ namespace EF_Migrations
     public class Model : DbContext
     {
         public DbSet<Product> Products { get; set; }
+        public DbSet<Category> Categories { get; set; }
 
         public string DbPath { get; }
 
@@ -44,6 +46,12 @@ namespace EF_Migrations
             {
                 p.HasKey(e => e.Id);
                 p.Property(e => e.Id).UseIdentityColumn();
+            });
+
+            modelBuilder.Entity<Category>(c =>
+            {
+                c.HasKey(e => e.Id);
+                c.Property(e => e.Id).UseIdentityColumn();
             });
         }
     }
