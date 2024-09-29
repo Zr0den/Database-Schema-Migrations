@@ -14,7 +14,7 @@ namespace EF_Migrations
     {
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
-
+        public DbSet<ProductRating> ProductRatings { get; set; }
         public string DbPath { get; }
 
         public Model()
@@ -49,6 +49,12 @@ namespace EF_Migrations
             });
 
             modelBuilder.Entity<Category>(c =>
+            {
+                c.HasKey(e => e.Id);
+                c.Property(e => e.Id).UseIdentityColumn();
+            });
+
+            modelBuilder.Entity<ProductRating>(c =>
             {
                 c.HasKey(e => e.Id);
                 c.Property(e => e.Id).UseIdentityColumn();
