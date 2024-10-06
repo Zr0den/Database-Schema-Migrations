@@ -1,4 +1,6 @@
 --ROLLBACK ADD-RATINGS
+USE [ShopDB]
+GO
 
 ALTER TABLE ProductRatings DROP CONSTRAINT FK_Product_ProductRatings
 DROP TABLE ProductRatings
