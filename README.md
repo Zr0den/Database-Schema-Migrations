@@ -9,4 +9,6 @@ Here we do have to delete the restraint first, as Products is reliant on Categor
 - 1_RollbackInitialSchema
 Drops the only remaining table, Products, leaving us with an empty database.
 
+The way it works in EntityFramework is that each Migration has its own Up() and Down() methods, which essentially do the same thing as we did manually self-explanatorily from their names. You just call the desired method on the desired migration in order to reach your desired state.
+
 *We are aware that it is better practice to do "soft deletes" on our tables instead, which we could for example do by renaming them and thereby not lose any data. We just haven't done that
